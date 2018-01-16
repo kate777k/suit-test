@@ -1,0 +1,17 @@
+from selenium import webdriver
+
+driver = webdriver.Chrome("/Users/kzhuzha/work/python/chromedriver")
+
+"""A sample test class to show navigation to the Suitsupply home page """
+
+
+class HomePage():
+
+    def __init__(self):
+        self.driver = driver
+
+    def home_page(self):
+        self.driver.get("https://eu.suitsupply.com/en/home")
+
+    def is_title_matches(self):
+        return "Suitsupply" in self.driver.title
