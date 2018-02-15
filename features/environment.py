@@ -14,6 +14,7 @@ def before_all(context):
 def after_all(context):
     context.browser.quit()
 
+
 BEHAVE_DEBUG_ON_ERROR = False
 
 
@@ -28,3 +29,4 @@ def after_step(context, step):
         # NOTE: Use IPython debugger, same for pdb (basic python debugger).
         import ipdb
         ipdb.post_mortem(step.exc_traceback)
+    time.sleep(2)
