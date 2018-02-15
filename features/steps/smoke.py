@@ -80,5 +80,4 @@ def step_impl(context):
 @then("Checkout page opens")
 def step_impl(context):
     print('Checkout page opened and test passed')
-    context.browser.find_element_by_xpath('//*[@id="dwfrm_').click()
     context.browser.quit()
