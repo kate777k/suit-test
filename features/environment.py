@@ -3,7 +3,8 @@ import time
 
 
 def before_all(context):
-    context.browser = webdriver.Chrome("/Users/kzhuzha/work/python/chromedriver")
+    context.browser = webdriver.Chrome(executable_path="/Users/kzhuzha/work/python/chromedriver")
+    # context.browser = webdriver.Firefox(executable_path="/Users/kzhuzha/work/python/geckodriver")
     context.browser.set_page_load_timeout(10)
     context.browser.implicitly_wait(10)
     context.browser.maximize_window()
