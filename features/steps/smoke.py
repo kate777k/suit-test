@@ -78,5 +78,4 @@ def step_impl(context):
 
 @then("Checkout page opens")
 def step_impl(context):
-    print('Checkout page opened and test passed')
-    context.browser.quit()
+    assert 'Check out' in context.browser.title, "Wrong page opened"
