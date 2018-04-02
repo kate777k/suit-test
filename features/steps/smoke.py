@@ -1,5 +1,5 @@
 import time
-from behave import given, when, then, step
+from behave import given, when, then
 
 
 @given("I open Suitsupply website")
@@ -7,12 +7,12 @@ def step_impl(context):
     context.browser.get("https://eu.suitsupply.com/en/home")
 
 
-@step("I close cookie bar")
+@given("I close cookie bar")
 def step_impl(context):
     context.browser.find_element_by_css_selector('.js-cookie-bar-close').click()
 
 
-@step("I close country verification bar")
+@given("I close country verification bar")
 def step_impl(context):
     context.browser.find_element_by_css_selector('.js-country-verification-bar-close').click()
 
@@ -22,56 +22,56 @@ def step_impl(context):
     context.browser.find_element_by_css_selector('.sel-clothing').click()
 
 
-@step("I choose 'Suits' category")
+@when("I choose 'Suits' category")
 def step_impl(context):
     context.browser.find_element_by_css_selector('.sel-category.sel-suits').click()
 
 
-@step("I select product #'{prod_num}' from lister")
+@when("I select product #'{prod_num}' from lister")
 def step_impl(context, prod_num):
     context.browser.find_element_by_css_selector(f'.js-category-content .sel-product-container:nth-child({prod_num})').click()
 
 
-@step("I click on 'Select size' dropdown")
+@when("I click on 'Select size' dropdown")
 def step_impl(context):
     context.browser.find_element_by_css_selector('.sel-size-field').click()
 
 
-@step("I select size #'{size_num}' from dropdown")
+@when("I select size #'{size_num}' from dropdown")
 def step_impl(context, size_num):
     context.browser.find_element_by_css_selector(f'.sel-size-field > option:nth-child({size_num})').click()
 
 
-@step("I click on 'ADD TO BAG'")
+@when("I click on 'ADD TO BAG'")
 def step_impl(context):
     context.browser.find_element_by_css_selector('.sel-controls-container button.js-add-to-bag-btn').click()
 
 
-@step("I click on 'Secure checkout' on Minicart")
+@when("I click on 'Secure checkout' on Minicart")
 def step_impl(context):
     context.browser.find_element_by_css_selector('.sel-checkout-trigger').click()
 
 
-@step("I click on 'Proceed to purchase' on Cart page")
+@when("I click on 'Proceed to purchase' on Cart page")
 def step_impl(context):
     context.browser.find_element_by_css_selector('.js-purchase-btn.sel-checkout-trigger').click()
 
 
-@step("I enter user '{user}' on Login page")
+@when("I enter user '{user}' on Login page")
 def step_impl(context, user):
     user_input = context.browser.find_element_by_css_selector('#dwfrm_login_registered_username')
     user_input.clear()
     user_input.send_keys(user)
 
 
-@step("I enter password '{password}' on Login page")
+@when("I enter password '{password}' on Login page")
 def step_impl(context, password):
     password_input = context.browser.find_element_by_css_selector('#dwfrm_login_registered_password')
     password_input.clear()
     password_input.send_keys(password)
 
 
-@step("I click on 'Login & continue'")
+@when("I click on 'Login & continue'")
 def step_impl(context):
     context.browser.find_element_by_css_selector('.sel-login-trigger.sel-login').click()
 
