@@ -1,4 +1,4 @@
 selenium
-git+https://github.com/behave/behave
+git+https://github.com/behave/behave#egg=behave
 pytest-bdd
 ipdb
