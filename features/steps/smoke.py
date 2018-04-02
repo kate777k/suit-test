@@ -17,12 +17,12 @@ def step_impl(context):
     context.browser.find_element_by_css_selector('#notification-legacy-overide-1 > div.notifications-container > div.country-verification-bar span.notification__trigger > i.js-country-verification-bar-close').click()
 
 
-@when("I select Clothing from the menu")
+@when("I select 'Clothing' from the menu")
 def step_impl(context):
     context.browser.find_element_by_xpath('//*[@id="header-legacy-overide-1"]/nav/div[2]/div/div/ul/li[2]/a/span').click()
 
 
-@step("I choose needed category")
+@step("I choose 'Suits' category")
 def step_impl(context):
     context.browser.find_element_by_xpath('//*[@id="header-legacy-overide-1"]/nav/div[2]/div/div/ul/li[2]/div/div/div[1]/div/div/ul/div[1]/ul/li[1]/a/span').click()
 
@@ -32,7 +32,7 @@ def step_impl(context):
     context.browser.find_element_by_xpath('//*[@id="contentWrap-legacy-overide-1"]/div/div/div[1]/a[1]/img').click()
 
 
-@step("I click on dropdown on PDP")
+@step("I click on 'Select size' dropdown")
 def step_impl(context):
     context.browser.find_element_by_xpath('//*[@id="js-pdpmain"]/div/div[1]/div/div[3]/div[2]/div[1]/div[3]/div/select').click()
 
@@ -47,12 +47,12 @@ def step_impl(context):
     context.browser.find_element_by_css_selector('#js-pdpmain div.main-product-info div.sel-controls-container button.js-add-to-bag-btn').click()
 
 
-@step("I click on 'Secure checkout' on minicart")
+@step("I click on 'Secure checkout' on Minicart")
 def step_impl(context):
     context.browser.find_element_by_xpath('//*[@id="minicart"]/div/div[2]/a').click()
 
 
-@step("I click on 'Proceed to purchase'")
+@step("I click on 'Proceed to purchase' on Cart page")
 def step_impl(context):
     context.browser.find_element_by_xpath(
         '//*[@id="legacy-overide-id-bottom"]/div[2]/div[2]/div/div[1]/div[1]/div[1]/div[2]/a').click()
