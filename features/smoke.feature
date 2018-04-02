@@ -1,10 +1,12 @@
-Feature: Smoke on Suitsupply
+Feature: Checkout
+	As a visitor of the suitsupply webshop
+	I want to be able to do a purchase
 
-    Scenario: Navigation to PDP
-      Given I open Suitsupply website
+  Scenario: Successful checkout of multi-size product
+    Given I open Suitsupply website
       And I close cookie bar
       And I close country verification bar
-      When I select 'Clothing' from the menu
+    When I select 'Clothing' from the menu
       And I choose 'Suits' category
       And I select product #'1' from lister
       And I click on 'Select size' dropdown
@@ -15,4 +17,4 @@ Feature: Smoke on Suitsupply
       And I enter user 'test@testtest.nl' on Login page
       And I enter password 'test12345' on Login page
       And I click on 'Login & continue'
-      Then Checkout page opens
+    Then Checkout page opens
