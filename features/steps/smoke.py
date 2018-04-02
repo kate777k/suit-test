@@ -19,62 +19,61 @@ def step_impl(context):
 
 @when("I select 'Clothing' from the menu")
 def step_impl(context):
-    context.browser.find_element_by_xpath('//*[@id="header-legacy-overide-1"]/nav/div[2]/div/div/ul/li[2]/a/span').click()
+    context.browser.find_element_by_css_selector('.sel-clothing').click()
 
 
 @step("I choose 'Suits' category")
 def step_impl(context):
-    context.browser.find_element_by_xpath('//*[@id="header-legacy-overide-1"]/nav/div[2]/div/div/ul/li[2]/div/div/div[1]/div/div/ul/div[1]/ul/li[1]/a/span').click()
+    context.browser.find_element_by_css_selector('.sel-category.sel-suits').click()
 
 
 @step("I select a product from lister")
 def step_impl(context):
-    context.browser.find_element_by_xpath('//*[@id="contentWrap-legacy-overide-1"]/div/div/div[1]/a[1]/img').click()
+    context.browser.find_element_by_css_selector(f'.js-category-content .sel-product-container').click()
 
 
 @step("I click on 'Select size' dropdown")
 def step_impl(context):
-    context.browser.find_element_by_xpath('//*[@id="js-pdpmain"]/div/div[1]/div/div[3]/div[2]/div[1]/div[3]/div/select').click()
+    context.browser.find_element_by_css_selector('.sel-size-field').click()
 
 
 @step("I select size #'{size_num}' from dropdown")
 def step_impl(context, size_num):
-    context.browser.find_element_by_css_selector(f'#js-pdpmain div.main-product-info div.custom-select > select.sel-size-field > option:nth-child({size_num})').click()
+    context.browser.find_element_by_css_selector(f'.sel-size-field > option:nth-child({size_num})').click()
 
 
 @step("I click on 'ADD TO BAG'")
 def step_impl(context):
-    context.browser.find_element_by_css_selector('#js-pdpmain div.main-product-info div.sel-controls-container button.js-add-to-bag-btn').click()
+    context.browser.find_element_by_css_selector('.sel-controls-container button.js-add-to-bag-btn').click()
 
 
 @step("I click on 'Secure checkout' on Minicart")
 def step_impl(context):
-    context.browser.find_element_by_xpath('//*[@id="minicart"]/div/div[2]/a').click()
+    context.browser.find_element_by_css_selector('.sel-checkout-trigger').click()
 
 
 @step("I click on 'Proceed to purchase' on Cart page")
 def step_impl(context):
-    context.browser.find_element_by_xpath(
-        '//*[@id="legacy-overide-id-bottom"]/div[2]/div[2]/div/div[1]/div[1]/div[1]/div[2]/a').click()
+    context.browser.find_element_by_css_selector('.js-purchase-btn.sel-checkout-trigger').click()
 
 
 @step("I enter user '{user}' on Login page")
 def step_impl(context, user):
-    user_input = context.browser.find_element_by_xpath('//*[@id="dwfrm_login_registered_username"]')
+    user_input = context.browser.find_element_by_css_selector('#dwfrm_login_registered_username')
     user_input.clear()
     user_input.send_keys(user)
 
 
 @step("I enter password '{password}' on Login page")
 def step_impl(context, password):
-    password_input = context.browser.find_element_by_xpath('//*[@id="dwfrm_login_registered_password"]')
+    password_input = context.browser.find_element_by_css_selector('#dwfrm_login_registered_password')
     password_input.clear()
     password_input.send_keys(password)
 
 
 @step("I click on 'Login & continue'")
 def step_impl(context):
-    context.browser.find_element_by_xpath('//*[@id="dwfrm_login_registered"]/fieldset/input').click()
+    context.browser.find_element_by_css_selector('.sel-login-trigger.sel-login').click()
 
 
 @then("Checkout page opens")
