@@ -27,9 +27,9 @@ def step_impl(context):
     context.browser.find_element_by_css_selector('.sel-category.sel-suits').click()
 
 
-@step("I select a product from lister")
-def step_impl(context):
-    context.browser.find_element_by_css_selector(f'.js-category-content .sel-product-container').click()
+@step("I select product #'{prod_num}' from lister")
+def step_impl(context, prod_num):
+    context.browser.find_element_by_css_selector(f'.js-category-content .sel-product-container:nth-child({prod_num})').click()
 
 
 @step("I click on 'Select size' dropdown")
