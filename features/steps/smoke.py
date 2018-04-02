@@ -9,12 +9,12 @@ def step_impl(context):
 
 @step("I close cookie bar")
 def step_impl(context):
-    context.browser.find_element_by_css_selector('#notification-legacy-overide-1 > div.notifications-container > div.cookie-bar > span.notification__trigger > i.js-cookie-bar-close').click()
+    context.browser.find_element_by_css_selector('.js-cookie-bar-close').click()
 
 
 @step("I close country verification bar")
 def step_impl(context):
-    context.browser.find_element_by_css_selector('#notification-legacy-overide-1 > div.notifications-container > div.country-verification-bar span.notification__trigger > i.js-country-verification-bar-close').click()
+    context.browser.find_element_by_css_selector('.js-country-verification-bar-close').click()
 
 
 @when("I select 'Clothing' from the menu")
